@@ -1,0 +1,20 @@
+---
+- vars:
+  - networks:
+    - name: test
+      bridge:
+        name: brtest
+        stp: on
+        delay: 0
+      #hwaddr: 52:54:00:f7:34:54
+      domainname: example.demo
+      ipaddr: 172.32.0.254
+      netmask: 255.255.0.0
+      dhcp_range:
+        start: 172.32.0.10
+        end: 172.32.1.253
+
+- hosts: testhosts
+  remote_user: root
+  roles:
+    - libvirt-net
