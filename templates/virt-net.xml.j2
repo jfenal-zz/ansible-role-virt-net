@@ -22,11 +22,11 @@
      />
   {% if item.hwaddr is defined %}
   <mac address='{{ item.hwaddr | hwaddr }}'/>
-  {% endif %}
+  {% endif %}
 
   {% if item.domainname is defined %}
   <domain name='{{ item.domainname }}'/>
-  {% endif %}
+  {% endif %}
    
   <ip address='{{ item.ipaddr | ipaddr }}' netmask='{{ item.netmask }}'>
     {% if item.dhcp_range.start is defined and item.dhcp_range.end is defined %}
